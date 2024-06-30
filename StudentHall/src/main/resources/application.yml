@@ -1,0 +1,54 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/study_hall?characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 12345678
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: hzt8848thj
+    lettuce:
+      pool:
+        max-active: 8  #最大连接
+        max-idle: 8   #最大空闲连接
+        min-idle: 0   #最小空闲连接
+        max-wait: 100ms #连接等待时间
+
+  # 邮箱基本配置
+  mail:
+    # 配置 smtp 服务主机地址
+    # qq 邮箱     smtp.qq.com    端口号 465 或 587
+    # sina       smtp.sina.com
+    # aliyun     smtp.aliyun.com
+    # 163        smtp.163.com   端口号 465 或 994
+    host: smtp.qq.com
+    # 发送者邮箱
+    username: 1846558205@qq.com
+    # 在邮箱内申请的授权码
+    password: fidnonfoleeqfbbb
+    # 端口号
+    port: 587
+    # 默认的邮件编码为UTF-8
+    default-encoding: UTF-8
+    # 其他参数
+    properties:
+      mail:
+        # 配置SSL 加密工厂
+        smtp:
+          ssl:
+            # 本地测试， 先放开ssl
+            enable: false
+            required: false
+          #开启debug模式，这样邮件发送过程的日志会在控制台打印出来，方便排查错误
+        debug: true
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+server:
+  port: 8989
+    # 其他配置参数
